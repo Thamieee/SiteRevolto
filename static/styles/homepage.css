@@ -1,75 +1,77 @@
 .containerHeader{
     display: grid;
-    margin-left: 5%;
-    margin-right: 5%;
-    grid-template-columns: 1fr 8fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     height: 20vh;
-}
-
-.banner{
-    display: grid;
-    grid-column: 2 / span 3;
-    grid-row: 1 / span 3;
+    border: 5px solid white;
+    border-radius: 40px;
     background-color: red;
-    color: black;
 }
 
 .logo{
-    display: grid;
+    position: relative;
     grid-column: 1;
     grid-row: 1 / span 3;
-    background-color: aqua;
-    color: black;
+    left: 10%;
 }
 
 .navigationBar{
     display: grid;
-    grid-column: 2 / span 3;
-    grid-row: 3;
-    background-color: rgb(0, 0, 255, 0.1);
+    grid-column: 2 / span 5;
+}
+
+.navigationBarText{
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    top: 15%;
+    right: 15%;
+    text-align: center;
+    word-spacing: 10vw;
+    color: white;
+    font-family: Gill Sans MT Condensed;
+    font-size: 32px;
 }
 
 .containerMain{
     display: grid;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 2%;
-    grid-template-columns: 1fr 8fr 1fr;
-    height: 160vh;
+    position: absolute;
+    height: 80vh;
+    top: 25vh;
+    left: 1vw;
+    right: 1vw;
 }
 
-.content{
+.containerContent{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    text-align: justified;
+}
+
+.imgContent{
+    display: grid;
+    position: absolute;
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    left: 5vw;
+}
+
+.contentTitle{
     display: grid;
     grid-column: 2;
-    background-color: cornflowerblue;
-    color: black;
+    grid-row: 1;
+    text-align: center;
+    color: red;
+    font-family: Gill Sans MT Condensed;
+    font-size: 48px;
 }
 
-.ad1{
+.contentText{
     display: grid;
-    grid-column: 3;
-    background-color: gray;
+    grid-column: 2;
+    grid-row: 2;
     color: black;
-}
-
-.relatedPosts{
-    display: grid;
-    grid-column: 1;
-    background-color: pink;
-    color: black;
-}
-
-.containerFooter{
-    display: grid;
-    margin-top: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
-    height: 20vh;
-}
-
-.links{
-    background-color: darkseagreen;
-    color: black;
-    
+    font-family: Gill Sans MT Condensed;
+    font-size: 24px;
 }
