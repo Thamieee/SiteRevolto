@@ -12,7 +12,7 @@ def contato():
 
 @revolto.route("/usuario/<nome_usuario>")
 def usuario(nome_usuario):
-    return render_template("usuario.html", username=nome_usuario)
+    return render_template("usuario.html", username = nome_usuario)
 
 if __name__ == "__main__":
     revolto.run(debug = True)
