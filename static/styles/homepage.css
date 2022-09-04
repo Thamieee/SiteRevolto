@@ -44,7 +44,7 @@
 
 .containerContent{
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 3fr 1fr;
     text-align: justified;
 }
@@ -52,7 +52,7 @@
 .imgContent{
     display: grid;
     position: absolute;
-    grid-column: 1;
+    grid-column: 1 / span 2;
     grid-row: 1 / span 3;
     left: 5vw;
 }
