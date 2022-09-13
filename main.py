@@ -1,9 +1,13 @@
+import os
+import psycopg2
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
 
 app = Flask(__name__)
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
+# app.config['MAIL_USERNAME'] = os.environ['MAIL_USERNAME']
+# app.config['MAIL_PASSWORD'] = os.environ['MAIL_PASSWORD']
 app.config['MAIL_USERNAME'] = 'noreply.revoltosoftware@gmail.com'
 app.config['MAIL_PASSWORD'] = 'uyimtytcszuwqcjg'
 app.config['MAIL_USE_TLS'] = False
