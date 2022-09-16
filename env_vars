@@ -1,0 +1,5 @@
+The following environment variables must be set in order to run this app:
+VARIABLE      | ARCHIVE
+DB_USERNAME   | init_db
+DB_PASSWORD   | init_db
+MAIL_PASSWORD | main
