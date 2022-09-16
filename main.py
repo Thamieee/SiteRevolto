@@ -1,13 +1,16 @@
-import os
-import components as components
-import psycopg2
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
+
 from components.logging_console import LoggingConsole
+from components.database_connector import DatabaseConnector
 
 logger = LoggingConsole(component="Revolto Software Site Logger")
+database_connector = DatabaseConnector(logger)
 logger.log_info("Inicializando aplicação")
+
 app = Flask(__name__)
+# app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
+app.config["SECRET_KEY"] = "23eae2cc4fc2aea77a2bd85baadcb755c21973d931466f95"
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 465
 # app.config["MAIL_PASSWORD"] = os.environ["MAIL_PASSWORD"]
@@ -32,9 +35,18 @@ def contato():
         return "Message sent!"
     return render_template("contato.html")
 
-# @app.route("/cadastro", methods=["GET", "POST"])
-# def cadastro():
-#     if request.method == "POST":
+@app.route("/cadastro", methods=["GET", "POST"])
+def cadastro():
+    if request.method == "POST":
+        form = {
+            "username": request.form["txtUsername"],
+            "email": request.form["txtEmail"],
+            "senha": request.form["txtSenha"],
+            "confirm_senha": request.form["txtConfirmSenha"]
+        }
+        if database_connector.verify_form(form):
+
+    return render_template("cadastro.html")
 
 # @app.route("/usuario/<nome_usuario>")
 # def usuario(nome_usuario):

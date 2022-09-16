@@ -1,14 +1,8 @@
-import os
-import psycopg2
+from components.database_connector import DatabaseConnector
 
 print("creating database connection")
-conn = psycopg2.connect(
-    host="localhost",
-    database="flask_db",
-    user="thamie",
-    password="postgres")
-    # user=os.environ['DB_USERNAME'],
-    # password=os.environ['DB_PASSWORD'])
+database = DatabaseConnector()
+conn = database.get_connection()
 
 cur = conn.cursor()
 

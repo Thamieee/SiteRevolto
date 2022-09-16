@@ -3,3 +3,4 @@ VARIABLE      | ARCHIVE
 DB_USERNAME   | init_db
 DB_PASSWORD   | init_db
 MAIL_PASSWORD | main
+SECRET_KEY    | main
