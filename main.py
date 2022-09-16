@@ -1,17 +1,21 @@
 import os
+import components as components
 import psycopg2
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
+from components.logging_console import LoggingConsole
 
+logger = LoggingConsole(component="Revolto Software Site Logger")
+logger.log_info("Inicializando aplicação")
 app = Flask(__name__)
-app.config['MAIL_SERVER']='smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
-# app.config['MAIL_PASSWORD'] = os.environ['MAIL_PASSWORD']
-app.config['MAIL_USERNAME'] = 'noreply.revoltosoftware@gmail.com'
-app.config['MAIL_PASSWORD'] = 'uyimtytcszuwqcjg'
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_DEFAULT_SENDER'] = ('Revolto Software', 'noreply.revoltosoftware@gmail.com')
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 465
+# app.config["MAIL_PASSWORD"] = os.environ["MAIL_PASSWORD"]
+app.config["MAIL_USERNAME"] = "noreply.revoltosoftware@gmail.com"
+app.config["MAIL_PASSWORD"] = "uyimtytcszuwqcjg"
+app.config["MAIL_USE_TLS"] = False
+app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_DEFAULT_SENDER"] = ("Revolto Software", "noreply.revoltosoftware@gmail.com")
 mail = Mail(app)
 
 @app.route("/")
@@ -27,6 +31,10 @@ def contato():
         mail.send(msg)
         return "Message sent!"
     return render_template("contato.html")
+
+# @app.route("/cadastro", methods=["GET", "POST"])
+# def cadastro():
+#     if request.method == "POST":
 
 # @app.route("/usuario/<nome_usuario>")
 # def usuario(nome_usuario):
@@ -47,6 +55,8 @@ def blog():
 @app.route("/jogos/oniriko")
 def oniriko():
     return render_template("oniriko.html")
+
+logger.log_info("Inicialização completa")
 
 if __name__ == "__main__":
     app.run(debug = True)
