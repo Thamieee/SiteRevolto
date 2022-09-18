@@ -41,11 +41,12 @@ def cadastro():
         form = {
             "username": request.form["txtUsername"],
             "email": request.form["txtEmail"],
-            "senha": request.form["txtSenha"],
-            "confirm_senha": request.form["txtConfirmSenha"]
+            "password": request.form["txtSenha"],
+            "confirm_password": request.form["txtConfirmSenha"],
+            "is_admin": False,
+            "role": "consumer"
         }
-        if database_connector.verify_form(form):
-
+        database_connector.register_user(form=form)
     return render_template("cadastro.html")
 
 # @app.route("/usuario/<nome_usuario>")
