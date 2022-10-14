@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/homepage.css') }}">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/homepage.css') }}"> -->
+        <link rel="stylesheet" href="../static/styles/homepage.css"> 
         <title>Revolto Software</title>
     </head>
     <body>
         <header>
             <div class="containerHeader">
                 <div class="logo">
-                    <img width=90% src="../static/img/RevoltoBanner.png" alt="404 image not found" height=100%>
+                    <img src="../static/img/RevoltoBanner.png" alt="Logo da Revolto">
                 </div>
                 <div class="navigationBar">
-                    <div class="navigationBarText">
-                        <p>
-                            Navigation bar
-                        </p>
-                    </div>
+                    <nav class="navigationBarText">
+                        <ul>
+                            <li><a href="./homepage.html">Home</a></li>
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./sobre.html">Sobre</a></li>
+                            <li><a href="./jogos.html">Jogos</a></li>
+                            <li><a href="./contato.html">Contato</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </header>
@@ -24,7 +32,7 @@
             <div class="containerMain">
                 <div class="containerContent">
                     <div class="imgContent">
-                        <img src="../static/img/oniriko.png" alt="404 image not found" height="60%">
+                        <img src="../static/img/oniriko.png" alt="Print do jogo Oniroko da Revolto" height="60%">
                     </div>
                     <div class="contentTitle">
                         Revolto's Wet Dream
