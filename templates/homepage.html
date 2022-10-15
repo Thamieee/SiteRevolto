@@ -5,7 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/homepage.css') }}"> -->
-        <link rel="stylesheet" href="../static/styles/homepage.css"> 
+        <link rel="stylesheet" href="../static/styles/homepage.css">
+        <script src="https://unpkg.com/phosphor-icons"></script> 
         <title>Revolto Software</title>
     </head>
     <body>
@@ -28,23 +29,31 @@
             </div>
         </header>
         
-        <main>
-            <div class="containerMain">
-                <div class="containerContent">
-                    <div class="imgContent">
-                        <img src="../static/img/oniriko.png" alt="Print do jogo Oniroko da Revolto" height="60%">
+        <footer id="footer">
+            <div class="containerFooter">
+                <div class="footerSection1">
+                    <div class="footerSocialMedia socialMedia">
+                        <a href="#"><i class="ph-facebook-logo-fill facebookIcon"></i></a>
+                        <a href="#"><i class="ph-instagram-logo-fill instagramIcon"></i></a>
+                        <a href="#"><i class="ph-youtube-logo-fill youtubeIcon"></i></a>
                     </div>
-                    <div class="contentTitle">
-                        Revolto's Wet Dream
-                    </div>
-                    <div class="contentText">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <p>Leia mais</p>
+                    <div class="footerContact">
+                        <h2>Contato</h2>
+                        <p>Gostaria de entrar em contato conosco ?</p>
+                        <p>Para dúvidas, sugestões ou assuntos em geral:</p> <br>
+                        <div class="footerContactInfo">
+                            <p>Whatsapp<i class="ph-whatsapp-logo-fill whatsappIcon"></i>:<a href="#">40024922</a></p>
+                            <p>Email<i class="ph-envelope-fill"></i>:<a href="mailto:">emailrevolto@revoltomail.com</a></p>
+                        </div>
                     </div>
                 </div>
+                <div class="footerSection2" style="text-align: center;">
+                    <h2>Section 2</h2>
+                </div>
+                <div class="footerSection3" style="text-align: center;">
+                    <h2>Section 3</h2>
+                </div>
             </div>
-        </main>
+        </footer>
     </body>
 </html>

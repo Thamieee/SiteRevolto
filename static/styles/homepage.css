@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Gill Sans MT Condensed;
+}
+
 li {
     list-style: none;
 }
@@ -77,7 +81,6 @@ a{
     grid-row: 1;
     text-align: center;
     color: red;
-    font-family: Gill Sans MT Condensed;
     font-size: 48px;
 }
 
@@ -89,3 +92,50 @@ a{
     font-family: Gill Sans MT Condensed;
     font-size: 24px;
 }
+
+
+#footer {
+    background-color: rgba(238, 132, 132, 0.363);
+    height: 50vh;
+}
+
+.containerFooter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.containerFooter > div {
+    padding: 1rem 1.25rem;
+    line-height: 2rem;
+}
+
+.containerFooter p {
+    font-size: 1.25rem;
+}
+
+.socialMedia {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.socialMedia a i{
+    font-size: 1.5rem;
+}
+
+.facebookIcon{
+    color: #1877f2;
+}
+
+.instagramIcon{
+    color: #ff1f56;
+}
+
+.youtubeIcon{
+    color: #ff0000;
+}
+
+.whatsappIcon {
+    color: #37c739;
+}
+
