@@ -1,4 +1,6 @@
-from services.user_service import register_logic, profile_logic, confirm_email_logic, login_logic, logout_logic
+from services.user_service import (
+    register_logic, profile_logic, confirm_email_logic, resend_confirmation_logic, login_logic, logout_logic
+    )
 
 def register():
     return register_logic()
@@ -14,3 +16,6 @@ def login():
 
 def logout():
     return logout_logic()
+
+def resend_confirmation():
+    return resend_confirmation_logic()
