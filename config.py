@@ -13,3 +13,5 @@ MAIL_USE_SSL = True
 MAIL_DEFAULT_SENDER = ("Revolto Software", "noreply.revoltosoftware@gmail.com")
 SQLALCHEMY_DATABASE_URI = "postgresql://postgres:postgres@localhost:5432/revolto_db"
 SQLALCHEMY_TRACK_MODIFICATIONS = False
+# SECURITY_PASSWORD_SALT = os.environ["SECURITY_PASSWORD_SALT"]
+SECURITY_PASSWORD_SALT = 'revolto_sea_salt'
