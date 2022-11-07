@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import datetime, date
 
 from flask_sqlalchemy import SQLAlchemy
 
@@ -17,7 +17,7 @@ class User(db.Model):
 
     def __init__(self, email: str, username: str, password: str,
                  is_admin: bool = False, is_confirmed: bool = False,
-                 date_added: date = None, confirmed_on: date = None):
+                 date_added: date = None, confirmed_on: datetime = None):
         self.email = email
         self.username = username
         self.password = password

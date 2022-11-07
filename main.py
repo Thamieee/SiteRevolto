@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
 from flask_migrate import Migrate
+from flask_bcrypt import Bcrypt
 
 
 from utils.logging_console import LoggingConsole
@@ -18,6 +19,7 @@ app.config.from_object("config")
 db.init_app(app)
 migrate = Migrate(app, db)
 mail = Mail(app)
+bcrypt = Bcrypt(app)
 app.register_blueprint(user_bp, url_prefix='/usuario')
 app.register_blueprint(auth_blueprint)
 app.register_blueprint(main_blueprint)
