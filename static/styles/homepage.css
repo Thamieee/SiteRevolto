@@ -1,36 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Gill Sans MT Condensed;
+}
+
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
 .containerHeader{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
     height: 20vh;
-    border: 5px solid white;
-    border-radius: 40px;
-    background-color: red;
-}
-
-.logo{
-    position: relative;
-    grid-column: 1;
-    grid-row: 1 / span 3;
-    left: 10%;
-}
-
-.navigationBar{
-    display: grid;
-    grid-column: 2 / span 5;
-}
-
-.navigationBarText{
     display: flex;
-    flex-direction: row-reverse;
-    position: relative;
-    top: 15%;
-    right: 15%;
-    text-align: center;
-    word-spacing: 10vw;
+    justify-content: space-between;
+    border: 5px solid white;
+    border-radius: 2.5rem;
+    background-color: red;
+    align-items: center;
+}
+
+.containerHeader > div {
+    margin: 0 2.5rem;
+}
+
+.logo img{
+    width: 30%;
+}
+
+.navigationBarText ul{
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    
+}
+
+.navigationBarText ul li a {
     color: white;
     font-family: Gill Sans MT Condensed;
-    font-size: 32px;
+    font-size: 2.25rem;
+}
+
+.navigationBarText ul li a:hover {
+    text-decoration: underline;
 }
 
 .containerMain{
@@ -63,7 +81,6 @@
     grid-row: 1;
     text-align: center;
     color: red;
-    font-family: Gill Sans MT Condensed;
     font-size: 48px;
 }
 
@@ -75,3 +92,50 @@
     font-family: Gill Sans MT Condensed;
     font-size: 24px;
 }
+
+
+#footer {
+    background-color: rgba(238, 132, 132, 0.363);
+    height: 50vh;
+}
+
+.containerFooter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.containerFooter > div {
+    padding: 1rem 1.25rem;
+    line-height: 2rem;
+}
+
+.containerFooter p {
+    font-size: 1.25rem;
+}
+
+.socialMedia {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.socialMedia a i{
+    font-size: 1.5rem;
+}
+
+.facebookIcon{
+    color: #1877f2;
+}
+
+.instagramIcon{
+    color: #ff1f56;
+}
+
+.youtubeIcon{
+    color: #ff0000;
+}
+
+.whatsappIcon {
+    color: #37c739;
+}
+

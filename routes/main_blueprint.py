@@ -35,3 +35,7 @@ def blog():
 def oniriko():
     return render_template("oniriko.html")
 
+@main.route("/equipe")
+def equipe():
+    return render_template("equipe.html")
+
