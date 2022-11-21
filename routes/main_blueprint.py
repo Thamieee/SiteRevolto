@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template, request
 from flask_mail import Message
-from main import db, mail
 
 main = Blueprint('main', __name__)
+
 
 @main.route("/")
 @main.route("/home")
@@ -11,6 +11,7 @@ def homepage():
 
 @main.route("/contato", methods=["GET", "POST"])
 def contato():
+    from main import mail
     if request.method == "POST":
         msg = Message("Teste", recipients = ["noreply.revoltosoftware@gmail.com"])
         msg.body = "Testando envio de e-mail pelo Flask"

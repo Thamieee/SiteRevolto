@@ -2,7 +2,6 @@ from datetime import datetime, date
 
 from flask import render_template, request, flash, redirect, url_for
 from flask_login import login_user, logout_user, login_required, current_user
-from main import bcrypt
 from models.user_model import User, db
 from utils.token import generate_confirmation_token, confirm_token
 from utils.forms import LoginForm, RegisterForm, ChangePasswordForm
@@ -34,6 +33,7 @@ def register_logic():
 
 @login_required
 def profile_logic(username: str):
+    from main import bcrypt
     form = ChangePasswordForm(request.form)
     if form.validate_on_submit():
         user = User.query.filter_by(email = current_user.email).first()
@@ -48,6 +48,7 @@ def profile_logic(username: str):
     return render_template('user/profile.html', form = form)
 
 def login_logic():
+    from main import bcrypt
     form = LoginForm(request.form)
     if form.validate_on_submit():
         user = User.query.filter_by(email = form.email.data).first()
