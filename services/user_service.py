@@ -1,34 +1,95 @@
-from datetime import date
+from datetime import datetime, date
 
-from flask import render_template, request
+from flask import render_template, request, flash, redirect, url_for
+from flask_login import login_user, logout_user, login_required, current_user
+from models.user_model import User, db
+from utils.token import generate_confirmation_token, confirm_token
+from utils.forms import LoginForm, RegisterForm, ChangePasswordForm
+from utils.email import send_email
 
-from models.user import User, db
-from utils.form_functions import check_user_form
 
-def create_logic():
-    if request.method == "POST":
-        data = request.form
-        if check_user_form(data):
-            new_user = User(
-                email=data["email"],
-                username=data["username"],
-                password=data["password"],
-                date_added=(date.today())
-            )
-            db.session.add(new_user)
-            db.session.commit()
-            return {"message": f"User {new_user.username} has been created successfully."}
-    return render_template("cadastro.html")
-
-def profile_logic(username: str):
-    user = User.query.get_or_404(username)
-    if request.method == "GET":
-        return render_template("usuario.html", username=username)
-    elif request.method == "PUT":
-        data = request.form
-        user.email = data["email"]
-        user.username = data["username"]
-        user.password = data["password"]
+def register_logic():
+    form = RegisterForm(request.form)
+    if form.validate_on_submit():
+        user = User(
+            email=form.email.data,
+            username=form.email.data,
+            password=form.email.data,
+            is_confirmed = False,
+            date_added=(date.today())
+        )
         db.session.add(user)
         db.session.commit()
-        return {"message": f"User {user.username} successfully updated"}
+
+        token = generate_confirmation_token(user.email)
+        confirm_url = url_for('user.confirm_email', token = token, _external = True)
+        html = render_template('user/activate.html', confirm_url = confirm_url)
+        subject = "Please confirm your email"
+        send_email(user.email, subject, html)
+        login_user(user)
+        flash('A confirmation email has been sent via email.', 'success')
+        return redirect(url_for("main.home"))
+    return render_template('user/register.html', form=form)
+
+@login_required
+def profile_logic(username: str):
+    from main import bcrypt
+    form = ChangePasswordForm(request.form)
+    if form.validate_on_submit():
+        user = User.query.filter_by(email = current_user.email).first()
+        if user:
+            user.password = bcrypt.generate_password_hash(form.password.data)
+            db.session.commit()
+            flash('Password successfully changed.', 'success')
+            return redirect(url_for('user.profile'))
+        else:
+            flash('Password change was unsuccessful.', 'danger')
+            return redirect(url_for('user.profile'))
+    return render_template('user/profile.html', form = form)
+
+def login_logic():
+    from main import bcrypt
+    form = LoginForm(request.form)
+    if form.validate_on_submit():
+        user = User.query.filter_by(email = form.email.data).first()
+        if user and bcrypt.check_password_hash(
+                user.password, request.form['password']):
+            login_user(user)
+            flash('Welcome.', 'success')
+            return redirect(url_for('main.home'))
+        else:
+            flash('Invalid email and/or password.', 'danger')
+            return render_template('user/login.html', form = form)
+    return render_template('user/login.html', form = form)
+
+@login_required
+def logout_logic():
+    logout_user()
+    flash('You were logged out.', 'success')
+    return redirect(url_for('user.login'))
+
+def confirm_email_logic(token):
+    try:
+        email = confirm_token(token)
+    except:
+        flash('The confirmation link is invalid or has expired.', 'danger')
+    user = User.query.filter_by(email = email).first_or_404()
+    if user.is_confirmed:
+        flash('Account already confirmed. Please login.', 'success')
+    else:
+        user.is_confirmed = True
+        user.confirmed_on = datetime.datetime.now()
+        db.session.add(user)
+        db.session.commit()
+        flash('You have confirmed your account. Thanks!', 'success')
+    return redirect(url_for('main.home'))
+
+@login_required
+def resend_confirmation_logic():
+    token = generate_confirmation_token(current_user.email)
+    confirm_url = url_for('user.confirm_email', token=token, _external=True)
+    html = render_template('user/activate.html', confirm_url=confirm_url)
+    subject = "Please confirm your email"
+    send_email(current_user.email, subject, html)
+    flash('A new confirmation email has been sent.', 'success')
+    return redirect(url_for('user.unconfirmed'))
