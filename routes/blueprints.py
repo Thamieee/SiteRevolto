@@ -6,6 +6,8 @@ from flask_login import login_user, logout_user, login_required
 from models.models import User, db
 
 auth = Blueprint('auth', __name__)
+main = Blueprint('main', __name__)
+user_bp = Blueprint("user_bp", __name__)
 
 @auth.route('/login')
 def login():
@@ -62,8 +64,6 @@ def logout():
     return redirect(url_for('main.index'))
 
 
-main = Blueprint('main', __name__)
-
 
 @main.route("/")
 @main.route("/home")
@@ -95,6 +95,11 @@ def blog():
 def oniriko():
     return render_template("oniriko.html")
 
+@main.route("/profile")
+@login_required
+def profile():
+    return "Profile"
 
-user_bp = Blueprint("user_bp", __name__)
-
+@main.route("/index")
+def index():
+    return render_template("homepage.html")
