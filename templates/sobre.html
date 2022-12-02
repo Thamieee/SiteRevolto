@@ -1,10 +1,521 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Sobre</title>
-</head>
-<body>
-    WIP
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/homepage.css') }}"> -->
+    <!-- <link rel="stylesheet" href="../static/styles/homepage.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Sobre | Revolto Software</title>
+  </head>
+  <body>
+    <header class="bg-zinc-900 text-gray-600 body-font">
+      <div
+        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+      >
+        <a
+          href="/"
+          class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+        >
+          <img
+            class="object-cover w-full h-10 lg:w-full"
+            src="/static/img/RevoltoLogoTransparente.png"
+            alt="Logo revolto"
+          />
+        </a>
+        <nav
+          class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
+        >
+          <a href="/" class="mr-5 text-slate-100">Home</a>
+          <a href="/templates/sobre.html" class="mr-5 text-slate-100">Sobre</a>
+          <a href="/templates/equipe.html" class="mr-5 text-slate-100"
+            >Equipe</a
+          >
+          <a href="/templates/jogos.html" class="mr-5 text-slate-100">Jogos</a>
+        </nav>
+
+        <button
+          class="inline-flex items-center bg-red-600 text-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-slate-200 rounded-lg text-base mt-4 md:mt-0"
+        >
+          Criar conta
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="bg-gray-900">
+        <div
+          class="container flex flex-col px-6 py-4 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center"
+        >
+          <div class="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
+            <div class="max-w-lg lg:mx-12 lg:order-2">
+              <h1
+                class="text-3xl font-medium tracking-wide text-white lg:text-4xl"
+              >
+                Bem vindos a Revolto Software
+              </h1>
+              <p class="mt-4 text-gray-300">
+                Somos um grupo de desenvolvimento de jogos muito dedicado em
+                entregar produtos de qualidade e com muita inovação
+              </p>
+              <div class="mt-6">
+                <a
+                  href="/jogos"
+                  class="block px-3 py-2 font-semibold text-center text-white transition-colors duration-300 transform bg-red-600 rounded-md lg:inline hover:bg-red-500"
+                  >Conheça Nossos Jogos</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-center w-full h-96 lg:w-1/2">
+            <img
+              class="object-cover w-full h-full max-w-2xl rounded-2xl"
+              src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+              alt="Homem gamer demonstrando suas habilidades"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="bg-white dark:bg-gray-900">
+        <div class="container px-6 py-10 mx-auto">
+          <h1
+            class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white"
+          >
+            Porque escolher <br />
+            a <span class="underline decoration-red-500">Revolto</span>
+          </h1>
+
+          <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
+            Nossos principais <span class="text-red-500">diferenciais</span>,
+            <span class="text-red-500">vantagens</span> e
+            <span class="text-red-500">exclusividades</span> que
+            disponibilizamos pensando na
+            <span class="text-red-500">sua experiência</span>
+          </p>
+
+          <div
+            class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3"
+          >
+            <div class="space-y-3">
+              <span
+                class="inline-block p-3 text-blue-500 bg-red-100 rounded-full dark:text-white dark:bg-blue-500"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="red"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                  />
+                </svg>
+              </span>
+
+              <h1
+                class="text-2xl font-semibold text-gray-700 capitalize dark:text-white"
+              >
+                Copy & paste components
+              </h1>
+
+              <p class="text-gray-500 dark:text-gray-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident ab nulla quod dignissimos vel non corrupti doloribus
+                voluptatum eveniet
+              </p>
+
+              <a
+                href="#"
+                class="inline-flex items-center -mx-1 text-sm text-red-500 capitalize transition-colors duration-300 transform dark:text-blue-400 hover:underline hover:text-red-600 dark:hover:text-blue-500"
+              >
+                <span class="mx-1">Saiba mais</span>
+                <svg
+                  class="w-4 h-4 mx-1 rtl:-scale-x-100"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+
+            <div class="space-y-3">
+              <span
+                class="inline-block p-3 text-blue-500 bg-red-100 rounded-full dark:text-white dark:bg-blue-500"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="red"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                  />
+                </svg>
+              </span>
+
+              <h1
+                class="text-2xl font-semibold text-gray-700 capitalize dark:text-white"
+              >
+                Zero Configrations
+              </h1>
+
+              <p class="text-gray-500 dark:text-gray-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident ab nulla quod dignissimos vel non corrupti doloribus
+                voluptatum eveniet
+              </p>
+
+              <a
+                href="#"
+                class="inline-flex items-center -mx-1 text-sm text-red-500 capitalize transition-colors duration-300 transform dark:text-blue-400 hover:underline hover:text-red-600 dark:hover:text-blue-500"
+              >
+                <span class="mx-1">Saiba mais</span>
+                <svg
+                  class="w-4 h-4 mx-1 rtl:-scale-x-100"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+
+            <div class="space-y-3">
+              <span
+                class="inline-block p-3 text-blue-500 bg-red-100 rounded-full dark:text-white dark:bg-blue-500"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="red"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  />
+                </svg>
+              </span>
+
+              <h1
+                class="text-2xl font-semibold text-gray-700 capitalize dark:text-white"
+              >
+                New Components Every month
+              </h1>
+
+              <p class="text-gray-500 dark:text-gray-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident ab nulla quod dignissimos vel non corrupti doloribus
+                voluptatum eveniet
+              </p>
+
+              <a
+                href="#"
+                class="inline-flex items-center -mx-1 text-sm text-red-500 capitalize transition-colors duration-300 transform dark:text-blue-400 hover:underline hover:text-red-600 dark:hover:text-blue-500"
+              >
+                <span class="mx-1">Saiba mais</span>
+                <svg
+                  class="w-4 h-4 mx-1 rtl:-scale-x-100"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+
+            <div class="space-y-3">
+              <span
+                class="inline-block p-3 text-blue-500 bg-red-100 rounded-full dark:text-white dark:bg-blue-500"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="red"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
+                  />
+                </svg>
+              </span>
+
+              <h1
+                class="text-2xl font-semibold text-gray-700 capitalize dark:text-white"
+              >
+                elegant Dark Mode
+              </h1>
+
+              <p class="text-gray-500 dark:text-gray-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident ab nulla quod dignissimos vel non corrupti doloribus
+                voluptatum eveniet
+              </p>
+
+              <a
+                href="#"
+                class="inline-flex items-center -mx-1 text-sm text-red-500 capitalize transition-colors duration-300 transform dark:text-blue-400 hover:underline hover:text-red-600 dark:hover:text-blue-500"
+              >
+                <span class="mx-1">Saiba mais</span>
+                <svg
+                  class="w-4 h-4 mx-1 rtl:-scale-x-100"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+
+            <div class="space-y-3">
+              <span
+                class="inline-block p-3 text-blue-500 bg-red-100 rounded-full dark:text-white dark:bg-blue-500"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="red"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
+                  />
+                </svg>
+              </span>
+
+              <h1
+                class="text-2xl font-semibold text-gray-700 capitalize dark:text-white"
+              >
+                Easy to customiztions
+              </h1>
+
+              <p class="text-gray-500 dark:text-gray-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident ab nulla quod dignissimos vel non corrupti doloribus
+                voluptatum eveniet
+              </p>
+
+              <a
+                href="#"
+                class="inline-flex items-center -mx-1 text-sm text-red-500 capitalize transition-colors duration-300 transform dark:text-blue-400 hover:underline hover:text-red-600 dark:hover:text-blue-500"
+              >
+                <span class="mx-1">Saiba mais</span>
+                <svg
+                  class="w-4 h-4 mx-1 rtl:-scale-x-100"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+
+            <div class="space-y-3">
+              <span
+                class="inline-block p-3 text-blue-500 bg-red-100 rounded-full dark:text-white dark:bg-blue-500"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="red"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                  />
+                </svg>
+              </span>
+
+              <h1
+                class="text-2xl font-semibold text-gray-700 capitalize dark:text-white"
+              >
+                Simple & clean designs
+              </h1>
+
+              <p class="text-gray-500 dark:text-gray-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident ab nulla quod dignissimos vel non corrupti doloribus
+                voluptatum eveniet
+              </p>
+
+              <a
+                href="#"
+                class="inline-flex items-center -mx-1 text-sm text-red-500 capitalize transition-colors duration-300 transform dark:text-blue-400 hover:underline hover:text-red-600 dark:hover:text-blue-500"
+              >
+                <span class="mx-1">Saiba mais</span>
+                <svg
+                  class="w-4 h-4 mx-1 rtl:-scale-x-100"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-zinc-800 dark:bg-gray-900">
+        <div class="container px-6 py-10 mx-auto">
+          <h1
+            class="text-3xl font-semibold text-center text-gray-100 capitalize xl:text-5xl lg:text-4xl dark:text-white"
+          >
+            Um pouco de nossa história
+          </h1>
+
+          <div class="flex justify-center mx-auto mt-6">
+            <span class="inline-block w-40 h-1 bg-red-500 rounded-full"></span>
+            <span
+              class="inline-block w-3 h-1 mx-1 bg-red-500 rounded-full"
+            ></span>
+            <span class="inline-block w-1 h-1 bg-red-500 rounded-full"></span>
+          </div>
+
+          <div class="flex items-start max-w-6xl mx-auto mt-16">
+            <div>
+              <p class="flex items-center text-center text-gray-300 lg:mx-8">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Aperiam, quam. Odio voluptatem officiis eos illo! Pariatur,
+                totam alias. Beatae accusamus earum quos obcaecati minima
+                molestias. Possimus minima dolores itaque! Esse! Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Ea voluptates
+                fugiat corrupti laudantium dolores reiciendis pariatur esse quod
+                nihil quia cupiditate debitis quisquam nemo, accusamus animi
+                explicabo? Architecto, unde laboriosam?
+              </p>
+
+              <div class="flex flex-col items-center justify-center mt-8">
+                <img
+                  class="object-cover rounded-full w-14 h-14"
+                  src="https://images.unsplash.com/photo-1499470932971-a90681ce8530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                  alt=""
+                />
+
+                <div class="mt-4 text-center">
+                  <h1 class="font-semibold text-gray-300 dark:text-white">
+                    Thamires
+                  </h1>
+                  <span class="text-sm text-gray-100 dark:text-gray-400"
+                    >Membro da Equipe</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="flex flex-col items-center justify-between p-6 bg-white dark:bg-gray-900 sm:flex-row"
+    >
+      <a
+        href="#"
+        class="text-xl font-bold transition-colors duration-300 text-red-500"
+        >Revolto</a
+      >
+
+      <p class="text-sm text-gray-600 dark:text-gray-300">
+        © Copyright 2022. Todos os direitos reservados.
+      </p>
+
+      <div class="flex -mx-2">
+        <a
+          href="#"
+          class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-red-400"
+          aria-label="Reddit"
+        >
+          <svg
+            class="w-5 h-5 fill-current"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM6.807 10.543C6.20862 10.5433 5.67102 10.9088 5.45054 11.465C5.23006 12.0213 5.37133 12.6558 5.807 13.066C5.92217 13.1751 6.05463 13.2643 6.199 13.33C6.18644 13.4761 6.18644 13.6229 6.199 13.769C6.199 16.009 8.814 17.831 12.028 17.831C15.242 17.831 17.858 16.009 17.858 13.769C17.8696 13.6229 17.8696 13.4761 17.858 13.33C18.4649 13.0351 18.786 12.3585 18.6305 11.7019C18.475 11.0453 17.8847 10.5844 17.21 10.593H17.157C16.7988 10.6062 16.458 10.7512 16.2 11C15.0625 10.2265 13.7252 9.79927 12.35 9.77L13 6.65L15.138 7.1C15.1931 7.60706 15.621 7.99141 16.131 7.992C16.1674 7.99196 16.2038 7.98995 16.24 7.986C16.7702 7.93278 17.1655 7.47314 17.1389 6.94094C17.1122 6.40873 16.6729 5.991 16.14 5.991C16.1022 5.99191 16.0645 5.99491 16.027 6C15.71 6.03367 15.4281 6.21641 15.268 6.492L12.82 6C12.7983 5.99535 12.7762 5.993 12.754 5.993C12.6094 5.99472 12.4851 6.09583 12.454 6.237L11.706 9.71C10.3138 9.7297 8.95795 10.157 7.806 10.939C7.53601 10.6839 7.17843 10.5422 6.807 10.543ZM12.18 16.524C12.124 16.524 12.067 16.524 12.011 16.524C11.955 16.524 11.898 16.524 11.842 16.524C11.0121 16.5208 10.2054 16.2497 9.542 15.751C9.49626 15.6958 9.47445 15.6246 9.4814 15.5533C9.48834 15.482 9.52348 15.4163 9.579 15.371C9.62737 15.3318 9.68771 15.3102 9.75 15.31C9.81233 15.31 9.87275 15.3315 9.921 15.371C10.4816 15.7818 11.159 16.0022 11.854 16C11.9027 16 11.9513 16 12 16C12.059 16 12.119 16 12.178 16C12.864 16.0011 13.5329 15.7863 14.09 15.386C14.1427 15.3322 14.2147 15.302 14.29 15.302C14.3653 15.302 14.4373 15.3322 14.49 15.386C14.5985 15.4981 14.5962 15.6767 14.485 15.786V15.746C13.8213 16.2481 13.0123 16.5208 12.18 16.523V16.524ZM14.307 14.08H14.291L14.299 14.041C13.8591 14.011 13.4994 13.6789 13.4343 13.2429C13.3691 12.8068 13.6162 12.3842 14.028 12.2269C14.4399 12.0697 14.9058 12.2202 15.1478 12.5887C15.3899 12.9572 15.3429 13.4445 15.035 13.76C14.856 13.9554 14.6059 14.0707 14.341 14.08H14.306H14.307ZM9.67 14C9.11772 14 8.67 13.5523 8.67 13C8.67 12.4477 9.11772 12 9.67 12C10.2223 12 10.67 12.4477 10.67 13C10.67 13.5523 10.2223 14 9.67 14Z"
+            />
+          </svg>
+        </a>
+
+        <a
+          href="#"
+          class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-red-400"
+          aria-label="Facebook"
+        >
+          <svg
+            class="w-5 h-5 fill-current"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.00195 12.002C2.00312 16.9214 5.58036 21.1101 10.439 21.881V14.892H7.90195V12.002H10.442V9.80204C10.3284 8.75958 10.6845 7.72064 11.4136 6.96698C12.1427 6.21332 13.1693 5.82306 14.215 5.90204C14.9655 5.91417 15.7141 5.98101 16.455 6.10205V8.56104H15.191C14.7558 8.50405 14.3183 8.64777 14.0017 8.95171C13.6851 9.25566 13.5237 9.68693 13.563 10.124V12.002H16.334L15.891 14.893H13.563V21.881C18.8174 21.0506 22.502 16.2518 21.9475 10.9611C21.3929 5.67041 16.7932 1.73997 11.4808 2.01722C6.16831 2.29447 2.0028 6.68235 2.00195 12.002Z"
+            />
+          </svg>
+        </a>
+      </div>
+    </footer>
+  </body>
 </html>

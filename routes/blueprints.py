@@ -103,3 +103,7 @@ def profile():
 @main.route("/index")
 def index():
     return render_template("homepage.html")
+
+@main.route("/equipe")
+def equipe():
+    return render_template("equipe.html")
