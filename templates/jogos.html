@@ -1,135 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/homepage.css') }}"> -->
-    <!-- <link rel="stylesheet" href="../static/styles/homepage.css"> -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Jogos | Revolto Software</title>
-  </head>
-  <body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/homepage.css') }}"> -->
+        <!-- <link rel="stylesheet" href="../static/styles/homepage.css"> -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Jogos | Revolto Software</title>
+    </head>
+<body>
     <header class="bg-zinc-900 text-gray-600 body-font">
-      <div
-        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
-      >
-        <a
-          href="/"
-          class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+        <div
+          class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
         >
-          <img class="object-cover w-full h-10 lg:w-full"
-          src=../static/img/RevoltoLogoTransparente.png alt="Logo revolto" />
-        </a>
-        <nav
-          class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
-        >
-          <a href="/index.html" class="mr-5 text-slate-100">Home</a>
-          <a href="/pages/sobre.html" class="mr-5 text-slate-100">Sobre</a>
-          <a href="/pages/equipe.html" class="mr-5 text-slate-100">Equipe</a>
-          <a href="/pages/jogos.html" class="mr-5 text-slate-100">Jogos</a>
-        </nav>
+          <a
+            class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+          >
+            <img
+              class="object-cover w-full h-10 lg:w-full"
+              src=../static/img/RevoltoLogoTransparente.png
+              alt="Logo revolto"
+            />
+          </a>
+          <nav
+            class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
+          >
+          <a href="/home" class="mr-5 text-slate-100">Home</a>
+          <a href="/sobre" class="mr-5 text-slate-100">Sobre</a>
+          <a href="/equipe" class="mr-5 text-slate-100">Equipe</a>
+          <a href="/jogos" class="mr-5 text-slate-100">Jogos</a>
+          </nav>
 
-        <button
-          class="inline-flex items-center bg-red-600 text-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-slate-200 rounded-lg text-base mt-4 md:mt-0"
-        >
-          Criar conta
-        </button>
-      </div>
+          <button
+            class="inline-flex items-center bg-red-600 text-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-slate-200 rounded-lg text-base mt-4 md:mt-0"
+            >Criar conta
+          </button>
+        </div>
     </header>
 
-    <section class="bg-zinc-900">
+    <section class="bg-gray-900">
       <div class="container px-6 py-10 mx-auto">
-        <h1
-          class="text-3xl font-semibold text-center capitalize lg:text-4xl text-white"
-        >
-          Our Nossos jogos
-        </h1>
-
-        <div
-          class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2"
-        >
-          <div
-            class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-            "
-          >
-            <div
-              class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 bg-gray-800/60"
-            >
-              <h2 class="mt-4 text-2xl font-semibold capitalize text-white">
-                Best website collections
-              </h2>
-              <p
-                class="mt-2 text-lg tracking-wider text-blue-500 uppercase text-blue-400"
-              >
-                Website
-              </p>
-            </div>
+          <h1 class="text-3xl font-semibold text-center capitalize lg:text-4xl text-white">Nossos Jogos</h1>
+  
+          <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
+              <a href="https://store.steampowered.com/app/1699960/Falta/">
+                  <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('https://cdn.akamai.steamstatic.com/steam/apps/1699960/capsule_616x353.jpg?t=1643678905')">
+                      <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 bg-gray-800/60">
+                          <h2 class="mt-4 text-2xl font-semibold capitalize text-white">Falta</h2>
+                          <p class="mt-2 text-lg tracking-wider text-blue-500 text-blue-400 ">Sobrevivência, Horror, Primeira Pessoa, 3D</p>
+                      </div>
+                  </div>
+              </a>
+              <a href="https://store.steampowered.com/app/1358730/Overn_Over/">
+                  <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('https://cdn.akamai.steamstatic.com/steam/apps/1358730/capsule_616x353.jpg?t=1595700929')">
+                      <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 bg-gray-800/60">
+                          <h2 class="mt-4 text-2xl font-semibold capitalize text-white">Over'n Over</h2>
+                          <p class="mt-2 text-lg tracking-wider text-blue-500 text-blue-400 ">Plataforma, Ação, Experimental, Difícil</p>
+                      </div>
+                  </div>
+              </a>  
+              <a href="https://revoltosoftware.itch.io/">
+                  <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('https://m.media-amazon.com/images/I/71BM9NcHcTL.png')">
+                      <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 bg-gray-800/60">
+                          <h2 class="mt-4 text-2xl font-semibold capitalize text-white">Yokai Dash</h2>
+                          <p class="mt-2 text-lg tracking-wider text-blue-500 text-blue-400 ">Corrida, 2D, Side-Scroller, Plataforma, Arcade</p>
+                      </div>
+                  </div>
+              </a>
+              <a href="https://revoltosoftware.itch.io/onriko-demo">
+                  <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('/static/img/oniriko.png')">
+                      <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 bg-gray-800/60">
+                          <h2 class="mt-4 text-2xl font-semibold capitalize text-white">Oniriko</h2>
+                          <p class="mt-2 text-lg tracking-wider text-blue-500 text-blue-400 ">3D, Mundo Aberto, Aventura, Bullet Hell</p>
+                      </div>
+                  </div>
+              </a>
           </div>
-
-          <div
-            class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1621609764180-2ca554a9d6f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80');
-            "
-          >
-            <div
-              class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 bg-gray-800/60"
-            >
-              <h2 class="mt-4 text-2xl font-semibold capitalize text-white">
-                Block of Ui kit collections
-              </h2>
-              <p
-                class="mt-2 text-lg tracking-wider text-blue-500 uppercase text-blue-400"
-              >
-                Ui kit
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
-            "
-          >
-            <div
-              class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 bg-gray-800/60"
-            >
-              <h2 class="mt-4 text-2xl font-semibold capitalize text-white">
-                Ton’s of mobile mockup
-              </h2>
-              <p
-                class="mt-2 text-lg tracking-wider text-blue-500 uppercase text-blue-400"
-              >
-                Mockups
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1603380353725-f8a4d39cc41e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
-            "
-          >
-            <div
-              class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 bg-gray-800/60"
-            >
-              <h2 class="mt-4 text-2xl font-semibold capitalize text-white">
-                Huge collection of animation
-              </h2>
-              <p
-                class="mt-2 text-lg tracking-wider text-blue-500 uppercase text-blue-400"
-              >
-                Animation
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
-  </body>
+</body>
 </html>
