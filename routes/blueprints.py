@@ -1,3 +1,5 @@
+from datetime import date
+
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_mail import Message
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -29,7 +31,7 @@ def login_post():
 
     # if the above check passes, then we know the user has the right credentials
     login_user(user, remember=remember)
-    return redirect(url_for('main.profile'))
+    return redirect(url_for('main.homepage'))
 
 @auth.route('/signup')
 def signup():
@@ -39,7 +41,6 @@ def signup():
 def signup_post():
 
     email = request.form.get('email')
-    name = request.form.get('name')
     password = request.form.get('password')
 
     user = User.query.filter_by(email=email).first() # if this returns a user, then the email already exists in database
@@ -49,7 +50,7 @@ def signup_post():
         return redirect(url_for('auth.signup'))
 
     # create new user with the form data. Hash the password so plaintext version isn't saved.
-    new_user = User(email=email, name=name, password=generate_password_hash(password, method='sha256'))
+    new_user = User(email=email, password=generate_password_hash(password, method='sha256'), registered_on=date.today())
 
     # add the new user to the database
     db.session.add(new_user)
@@ -63,10 +64,9 @@ def logout():
     logout_user()
     return redirect(url_for('main.index'))
 
-
-
 @main.route("/")
 @main.route("/home")
+@main.route("/index")
 def homepage():
     return render_template("homepage.html")
 
@@ -91,18 +91,10 @@ def jogos():
 def blog():
     return render_template("blog.html")
 
-@main.route("/jogos/oniriko")
-def oniriko():
-    return render_template("oniriko.html")
-
 @main.route("/profile")
 @login_required
 def profile():
     return "Profile"
-
-@main.route("/index")
-def index():
-    return render_template("homepage.html")
 
 @main.route("/equipe")
 def equipe():
