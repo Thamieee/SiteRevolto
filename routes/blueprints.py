@@ -1,15 +1,17 @@
 from datetime import date
 
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from flask_mail import Message
+from flask_mail import Message, Mail
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user, logout_user, login_required
+from flask_login import login_user, logout_user, login_required, current_user
 
 from models.models import User, db
 
 auth = Blueprint('auth', __name__)
 main = Blueprint('main', __name__)
 user_bp = Blueprint("user_bp", __name__)
+
+mail = Mail()
 
 @auth.route('/login')
 def login():
@@ -31,7 +33,7 @@ def login_post():
 
     # if the above check passes, then we know the user has the right credentials
     login_user(user, remember=remember)
-    return redirect(url_for('main.homepage'))
+    return redirect(url_for('main.loghomepage'))
 
 @auth.route('/signup')
 def signup():
@@ -66,9 +68,13 @@ def logout():
 
 @main.route("/")
 @main.route("/home")
-@main.route("/index")
 def homepage():
     return render_template("homepage.html")
+
+@main.route("/index")
+@login_required
+def loghomepage():
+    return render_template("loghomepage.html", email=current_user.email)
 
 @main.route("/contato", methods=["GET", "POST"])
 def contato():
@@ -76,7 +82,7 @@ def contato():
         msg = Message("Teste", recipients = ["noreply.revoltosoftware@gmail.com"])
         msg.body = "Testando envio de e-mail pelo Flask"
         mail.send(msg)
-        return "Message sent!"
+        return render_template("sendmessage.html")
     return render_template("contato.html")
 
 @main.route("/sobre")
@@ -90,11 +96,6 @@ def jogos():
 @main.route("/blog")
 def blog():
     return render_template("blog.html")
-
-@main.route("/profile")
-@login_required
-def profile():
-    return "Profile"
 
 @main.route("/equipe")
 def equipe():
