@@ -1,0 +1,51 @@
+name: Push-to-EC2
+on:
+  push:
+    branches:
+      - deployAWS
+jobs:
+  deploy:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout the files
+      uses: actions/checkout@v3
+
+    - name: Copy files with SSH
+      uses: easingthemes/ssh-deploy@main
+      env:
+        SSH_PRIVATE_KEY:
+          -----BEGIN RSA PRIVATE KEY-----
+          MIIEowIBAAKCAQEAkkIDaQ2eQzFH9FSm4LGVbc15CLgcAdmQWw7RDFEZwBUs3j/z
+          mfdMtyLcSeZdxkWiSApuWD1lMFCVRofAPT0cWD0H+1orKJnwb53TGEQRiyDnBPO3
+          s6q+cNLp/1igJMR8cT9GjerY885Olz36/wi8szeph2EvXXQjfC8/pTpKPgzUgKEt
+          g0eQgPWrDVsvplWTLZy8wL1/Mg1vjZUm652xybPAnzD3tyzR8D423MqIERoQj+B0
+          gR7QRmySXFffOaiqY7sAxDL7HO5aBWwkBVl4Gppe/Ixz7an6jlZAO8PTke8U7Z0O
+          9RNrpBSaBhD8teI7vpJkd22K/Euz2jyTcyb1HwIDAQABAoIBAC/GDlUfVKXAEC/Y
+          AtZ8S0Idjr5xXPyhs0x7D3/FcfLTN9+05f5R0CY15dzhuZnNHxAHEDoUe9wHRmtO
+          ZlXag0qzTMsmjdhqSCY9WDmh6lUWvz9X2JaAXEqAKlz09wJrh/Z547LxlkI1DmjK
+          nxT1JqYntWF6Nj2BdSHYUSLIYn3XtNn1IXfRakd1MrknV3GiDG1DX45+S3YEWCfT
+          qNrm6bISdg+UrZFWkTjKUGOt/8J1StKuBzD6ywuUtnB1mW2f0bQlXyu4x06aOS9u
+          NRCe4bRM8MfZ05Vo/ea/Zjq6YdBYGT8/t/TZ9tUa3gaa7MDYprONU9UCw3DUKk18
+          fHw9gHECgYEA5Jp9Qg49qTXDGAI6wtTuwng0geusmbw4JrRFwE8bSvsl5+SK3b96
+          bpE2UI3SGGB7dIA8laaDi/J2zIdBepYF6/t5PIctYYi71Iu4Tljh8RueXWdNVcYY
+          3bAPFWRqkEb0UWJHJ2WnlahHuxuB7eL0ZNXNqSpI43QH5k0Qq2kx2rcCgYEAo8kt
+          MdKkD98DblaGiIbPLZyw3oAvVO+D6lxwh74CLFdGrcLOy43cVSXl0K/tTzdw/ul+
+          XpvS0JZPUb9GOrKFdwayZt0aCXjRSaZvb9juFQDj3E9pk/T5gi9/eB3o4WPnDIAM
+          BW0f5uFjGC5LI9++c9pVf8dgwOO94DYRG3bv8NkCgYA/jshWjjkMi5sDWNNXifYb
+          8Wm/2XNyhsch06s07YmMDkmasIr/XhY/GXZ9bQDFsEWCvYianuIiDbaD5PMKjx10
+          X8V0U60FWgvG61XByqp+64vbMjZpK5uMPz/iVbnfBSs2WVmpFXVDgbb3yY0VQ61p
+          P5xfdRcwzfjIShLhZWzr/wKBgQCShjmeZvlLEZI6NcIphaD3B0Tb6QVvEM+M7KHn
+          bj73eCTM8oiaZhEFQ+AzMBA3XDwEcNMSxIh2/uF7Gokznd30u9MCXy8Z5jIll3X+
+          M63asG8o+wpSyUgmBWQeC3P5n6xl7G/UsullXaGPUmr6bwItFtiCddXC+ns1iGkJ
+          jv/dEQKBgHjmg+1zoiFxruXVdHHGJJ4KwsWu/0ZWrCC3aYIhdyocQXVqt7mI6dxl
+          p4MTrNAYUuDDR8oFZGPNfIBAP00VPt4ELgPx1VDQjpLVgqXF11YHBYonqFbTiUvu
+          0RMRQvQNV7sPwSgTyUkMsSKEI7eSSNwniELjVCE02SB/hwSPXuh/
+          -----END RSA PRIVATE KEY----- 
+        ARGS: "-rltgoDzvO --delete"
+        SOURCE: "./"
+        REMOTE_HOST: "ec2-54-226-73-219.compute-1.amazonaws.com"
+        REMOTE_USER: "ubuntu"
+        TARGET: "/home/ubuntu"
+        EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh, /__pycache__/"
